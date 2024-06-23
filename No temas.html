@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Alguien Muy Especial</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding-top: 50px;
+            margin: 0;
+        }
+        .container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        #envelope {
+            margin: 50px auto;
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #fff;
+            border: 2px solid #ff69b4;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+        }
+        #envelope.open {
+            height: 400px;
+        }
+        #envelope .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background-color: #ff69b4;
+            border-bottom: 10px solid #fff;
+            transform-origin: top;
+            transition: transform 0.5s ease-in-out;
+            border-radius: 5px 5px 0 0;
+        }
+        #envelope.open .flap {
+            transform: rotateX(180deg);
+        }
+        .message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #555;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #envelope.open .message {
+            display: block;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff4f7a;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Para Alguien Muy Especial</h1>
+        <div id="envelope">
+            <div class="flap"></div>
+            <div class="message">
+                "Por tanto, tomad toda la armadura de Dios, para que podáis resistir en el día malo, y habiéndolo hecho todo, estar firmes."
+            </div>
+        </div>
+        <button onclick="openEnvelope()">Abrir</button>
+        <button onclick="resetEnvelope()">Reset</button>
+    </div>
+    <script>
+        function openEnvelope() {
+            document.getElementById('envelope').classList.add('open');
+        }
+        function resetEnvelope() {
+            document.getElementById('envelope').classList.remove('open');
+        }
+    </script>
+</body>
+</html>
+
+
